@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gracias | Glow Leaders</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="gracias-page">
+
+  <section class="gracias-section">
+    <div class="gracias-box">
+
+      <h1 
+        data-es="¡Gracias por registrarte!"
+        data-en="Thank you for registering!"
+      >
+        ¡Gracias por registrarte!
+      </h1>
+
+      <p
+        data-es="Muy pronto, tu asesor se pondrá en contacto contigo para compartirte todos los detalles de tu Experiencia con Riman."
+        data-en="Very soon, your advisor will contact you to share all the details of your Experience with Riman."
+      >
+        Muy pronto, tu asesor se pondrá en contacto contigo para compartirte todos los detalles de tu Experiencia con Riman.
+      </p>
+
+      <p
+        data-es="Has obtenido tu Vale Exclusivo 2x1 para el Ritual Coreano de 7 Pasos, una experiencia diseñada para que descubras una nueva forma de cuidar tu piel. 
+        Las plazas son limitadas cada semana, por lo que te recomendamos estar atento/a a nuestro mensaje para confirmar tu reserva. 
+        ¡Nos encantará acompañarte en este proceso!"
+        data-en="You have received your Exclusive 2x1 Voucher for the 7-Step Korean Ritual, an experience designed for you to discover a new way to care for your skin. 
+        Spots are limited each week, so we recommend keeping an eye out for our message to confirm your reservation. 
+        We would love to accompany you on this journey!"
+      >
+        Has obtenido tu Vale Exclusivo 2x1 para el Ritual Coreano de 7 Pasos, una experiencia diseñada para que descubras una nueva forma de cuidar tu piel. Las plazas son limitadas cada semana, por lo que te recomendamos estar atento/a a nuestro mensaje para confirmar tu reserva. ¡Nos encantará acompañarte en este proceso!
+      </p>
+
+      <a href="index.html" class="btn-rutina"
+        data-es="VOLVER A LA PÁGINA"
+        data-en="BACK TO WEBSITE"
+      >
+        VOLVER A LA PÁGINA
+      </a>
+
+    </div>
+  </section>
+
+  <script>
+    const translatableElements = document.querySelectorAll('[data-es][data-en]');
+    const savedLang = localStorage.getItem('lang') || 'es';
+
+    function setLanguage(lang) {
+      document.documentElement.lang = lang;
+
+      translatableElements.forEach(el => {
+        const text = el.getAttribute(`data-${lang}`);
+        if (text) el.textContent = text;
+      });
+    }
+
+    setLanguage(savedLang);
+  </script>
+
+</body>
+</html>
