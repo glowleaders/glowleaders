@@ -2530,3 +2530,53 @@ h2,
     height: auto !important;
   }
 }
+
+/* =========================
+   AJUSTE TABLET HERO SLIDER
+========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero-slider-section {
+    overflow: hidden;
+  }
+
+  .hero-slider {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-slide {
+    min-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-slide img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+  }
+}
+
+/* =========================
+   AJUSTE TABLET FORMULARIO
+========================= */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .advisor-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .advisor-option {
+    overflow: visible;
+  }
+
+  .advisor-option img {
+    width: 100%;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    background: #fcfaf4;
+  }
+}
