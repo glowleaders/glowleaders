@@ -296,41 +296,48 @@ if (klaviyoForm) {
     const riman_link = klaviyoForm.querySelector('input[name="riman_link"]')?.value || "";
 
     const payload = {
-      data: {
-        type: "subscription",
-        attributes: {
-          profile: {
-            data: {
-              type: "profile",
-              attributes: {
-                email: email,
-                first_name: nombre,
-                properties: {
-                  telefono: telefono,
-                  ciudad: ciudad,
-                  asesor: asesor,
-                  advisor_name: advisor_name,
-                  advisor_email: advisor_email,
-                  advisor_phone: advisor_phone,
-                  riman_link: riman_link,
-                  experience_booked: "no"
+  data: {
+    type: "subscription",
+    attributes: {
+      profile: {
+        data: {
+          type: "profile",
+          attributes: {
+            email: email,
+            first_name: nombre,
+            subscriptions: {
+              email: {
+                marketing: {
+                  consent: "SUBSCRIBED"
                 }
               }
-            }
-          },
-          custom_source: "Glow Leaders Landing"
-        },
-        relationships: {
-          list: {
-            data: {
-              type: "list",
-              id: "TrAEuL"
+            },
+            properties: {
+              telefono: telefono,
+              ciudad: ciudad,
+              asesor: asesor,
+              advisor_name: advisor_name,
+              advisor_email: advisor_email,
+              advisor_phone: advisor_phone,
+              riman_link: riman_link,
+              experience_booked: "no"
             }
           }
         }
+      },
+      custom_source: "Glow Leaders Landing"
+    },
+    relationships: {
+      list: {
+        data: {
+          type: "list",
+          id: "TrAEuL"
+        }
       }
-    };
-
+    }
+  }
+};
+      
     try {
       const response = await fetch(
         "https://a.klaviyo.com/client/subscriptions/?company_id=XKp38T",
