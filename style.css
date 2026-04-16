@@ -2534,9 +2534,10 @@ h2,
 /* =========================
    AJUSTE TABLET HERO SLIDER
 ========================= */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 700px) and (max-width: 1100px) {
   .hero-slider-section {
     overflow: hidden;
+    background: #f3f0ea;
   }
 
   .hero-slider {
@@ -2553,6 +2554,7 @@ h2,
 
   .hero-slide img {
     width: 100%;
+    max-width: 100%;
     height: auto !important;
     object-fit: contain !important;
     display: block;
@@ -2562,7 +2564,7 @@ h2,
 /* =========================
    AJUSTE TABLET FORMULARIO
 ========================= */
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 700px) and (max-width: 1100px) {
   .advisor-grid {
     grid-template-columns: 1fr;
     gap: 16px;
@@ -2575,6 +2577,7 @@ h2,
   .advisor-option img {
     width: 100%;
     height: auto !important;
+    max-height: none !important;
     object-fit: contain !important;
     display: block;
     background: #fcfaf4;
