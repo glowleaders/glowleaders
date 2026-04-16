@@ -324,7 +324,7 @@ if (klaviyoForm) {
           list: {
             data: {
               type: "list",
-              id:"TrAEuL"
+              id: "TrAEuL"
             }
           }
         }
