@@ -324,7 +324,7 @@ if (klaviyoForm) {
           list: {
             data: {
               type: "list",
-              id: "TtUdz8"
+              id:"TrAEuL"
             }
           }
         }
@@ -333,7 +333,7 @@ if (klaviyoForm) {
 
     try {
       const response = await fetch(
-        "https://a.klaviyo.com/client/subscriptions/?company_id=XZjNH6",
+        "https://a.klaviyo.com/client/subscriptions/?company_id=XKp38T",
         {
           method: "POST",
           headers: {
