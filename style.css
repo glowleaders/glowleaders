@@ -2522,3 +2522,11 @@ h2,
     transform: translateX(-50%) !important;
   }
 }
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero img,
+  .hero video {
+    object-fit: contain !important;
+    height: auto !important;
+  }
+}
