@@ -295,49 +295,61 @@ if (klaviyoForm) {
     const advisor_phone = klaviyoForm.querySelector('input[name="advisor_phone"]')?.value || "";
     const riman_link = klaviyoForm.querySelector('input[name="riman_link"]')?.value || "";
 
+   if (klaviyoForm) {
+  klaviyoForm.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    const lang = document.documentElement.lang || "es";
+
+    const nombre = klaviyoForm.querySelector('input[name="nombre"]')?.value.trim() || "";
+    const email = klaviyoForm.querySelector('input[name="email"]')?.value.trim() || "";
+    const telefono = klaviyoForm.querySelector('input[name="telefono"]')?.value.trim() || "";
+    const ciudad = klaviyoForm.querySelector('input[name="ciudad"]')?.value.trim() || "";
+    const fecha_nacimiento = klaviyoForm.querySelector('input[name="fecha_nacimiento"]')?.value || "";
+    const asesor = klaviyoForm.querySelector('input[name="asesor"]:checked')?.value || "";
+
+    const advisor_name = klaviyoForm.querySelector('input[name="advisor_name"]')?.value || "";
+    const advisor_email = klaviyoForm.querySelector('input[name="advisor_email"]')?.value || "";
+    const advisor_phone = klaviyoForm.querySelector('input[name="advisor_phone"]')?.value || "";
+    const riman_link = klaviyoForm.querySelector('input[name="riman_link"]')?.value || "";
+
     const payload = {
-  data: {
-    type: "subscription",
-    attributes: {
-      profile: {
-        data: {
-          type: "profile",
-          attributes: {
-            email: email,
-            first_name: nombre,
-            subscriptions: {
-              email: {
-                marketing: {
-                  consent: "SUBSCRIBED"
+      data: {
+        type: "subscription",
+        attributes: {
+          profile: {
+            data: {
+              type: "profile",
+              attributes: {
+                email: email,
+                first_name: nombre,
+                properties: {
+                  telefono: telefono,
+                  ciudad: ciudad,
+                  fecha_nacimiento: fecha_nacimiento,
+                  asesor: asesor,
+                  advisor_name: advisor_name,
+                  advisor_email: advisor_email,
+                  advisor_phone: advisor_phone,
+                  riman_link: riman_link,
+                  experience_booked: "no"
                 }
               }
-            },
-            properties: {
-              telefono: telefono,
-              ciudad: ciudad,
-              asesor: asesor,
-              advisor_name: advisor_name,
-              advisor_email: advisor_email,
-              advisor_phone: advisor_phone,
-              riman_link: riman_link,
-              experience_booked: "no"
+            }
+          },
+          custom_source: "Glow Leaders Landing"
+        },
+        relationships: {
+          list: {
+            data: {
+              type: "list",
+              id: "TrAEuL"
             }
           }
         }
-      },
-      custom_source: "Glow Leaders Landing"
-    },
-    relationships: {
-      list: {
-        data: {
-          type: "list",
-          id: "TrAEuL"
-        }
       }
-    }
-  }
-};
-      
+    };
+
     try {
       const response = await fetch(
         "https://a.klaviyo.com/client/subscriptions/?company_id=XKp38T",
