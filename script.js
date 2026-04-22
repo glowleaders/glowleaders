@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
- /* =========================
+/* =========================
    FORMULARIO + GRACIAS + KLAVIYO
 ========================= */
 const klaviyoForm = document.getElementById("klaviyo-form");
@@ -279,23 +279,6 @@ advisorOptions.forEach((option) => {
 });
 
 if (klaviyoForm) {
-  klaviyoForm.addEventListener("submit", async function (e) {
-    e.preventDefault();
-
-    const lang = document.documentElement.lang || "es";
-
-    const nombre = klaviyoForm.querySelector('input[name="nombre"]')?.value.trim() || "";
-    const email = klaviyoForm.querySelector('input[name="email"]')?.value.trim() || "";
-    const telefono = klaviyoForm.querySelector('input[name="telefono"]')?.value.trim() || "";
-    const ciudad = klaviyoForm.querySelector('input[name="ciudad"]')?.value.trim() || "";
-    const asesor = klaviyoForm.querySelector('input[name="asesor"]:checked')?.value || "";
-
-    const advisor_name = klaviyoForm.querySelector('input[name="advisor_name"]')?.value || "";
-    const advisor_email = klaviyoForm.querySelector('input[name="advisor_email"]')?.value || "";
-    const advisor_phone = klaviyoForm.querySelector('input[name="advisor_phone"]')?.value || "";
-    const riman_link = klaviyoForm.querySelector('input[name="riman_link"]')?.value || "";
-
-   if (klaviyoForm) {
   klaviyoForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
